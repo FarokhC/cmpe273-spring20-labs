@@ -12,16 +12,16 @@ unsortedFiles = [
 ]
 
 sortedFiles = [
-    "output/sorted_1.txt",
-    "output/sorted_2.txt",
-    "output/sorted_3.txt",
-    "output/sorted_4.txt",
-    "output/sorted_5.txt",
-    "output/sorted_6.txt",
-    "output/sorted_7.txt",
-    "output/sorted_8.txt",
-    "output/sorted_9.txt",
-    "output/sorted_10.txt",
+    "output/sync/sorted_1.txt",
+    "output/sync/sorted_2.txt",
+    "output/sync/sorted_3.txt",
+    "output/sync/sorted_4.txt",
+    "output/sync/sorted_5.txt",
+    "output/sync/sorted_6.txt",
+    "output/sync/sorted_7.txt",
+    "output/sync/sorted_8.txt",
+    "output/sync/sorted_9.txt",
+    "output/sync/sorted_10.txt",
 ]
 
 def sort():
@@ -43,7 +43,7 @@ def mergeSortedFiles(sortedFiles):
         data = getFileLines(fileName)
         unmergedData.extend(data)
     unmergedData.sort()
-    writeSortedFileLines("output/sorted.txt", unmergedData)
+    writeSortedFileLines("output/sync/sorted.txt", unmergedData)
 
 def sortFile(inputFileName, outputFileName):
     unsortedValues = getFileLines(inputFileName)
