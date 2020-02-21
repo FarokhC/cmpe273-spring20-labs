@@ -123,13 +123,13 @@ def addStudentToClass(id):
                 "id" : student_id,
                 "name" : students[int(student_id)]
         })
-    else:  
+    else:
         classObject["students"] = [
                 {
                     "id" : student_id,
                     "name" : students[int(student_id)]
                 }
             ]
-    
+
     classes[class_id] = classObject
     return classes[class_id]

@@ -44,7 +44,8 @@ def hello():
 * Run your Hello World Flask application from a shell/terminal.
 
 ```sh
-$ env FLASK_APP=hello.py flask run
+pipenv shell
+$ env FLASK_APP=app.py flask run
 ```
 
 * Open [this URL](http://127.0.0.1:5000/) in a web browser or run this CLI to see the output.
@@ -71,30 +72,83 @@ You will be building a RESTful class registration API in this lab.
 
 ```
 POST /students
+
+# Request
+{
+    "name": "Bob Smith"
+}
+
+# Response
+# HTTP Code: 201
+{
+    "id" : 1234456,
+    "name" : "Bob Smith"
+}
 ```
 
 * Retrieve an existing student
 
 ```
 GET /students/{id}
+
+{
+    "id" : 1234456,
+    "name" : "Bob Smith"
+}
 ```
 
 * Create a class
 
 ```
 POST /classes
+
+# Request
+{
+    "name": "CMPE-273"
+}
+
+# Response
+{
+    "id": 1122334,
+    "name": "CMPE-273",
+    "students": []
+}
 ```
 
 * Retrieve a class
 
 ```
 GET /classes/{id}
+
+{
+    "id": 1122334,
+    "name": "CMPE-273",
+    "students": []
+}
 ```
 
 * Add students to a class
 
 ```
 PATCH /classes/{id}
+
+# Request
+{
+    "student_id": 1234456
+}
+
+# Response
+{
+    "id": 1122334,
+    "name": "CMPE-273",
+    "students": [
+        {
+            "id" : 1234456,
+            "name" : "Bob Smith"
+        }
+    ]
+}
+
 ```
 
 
